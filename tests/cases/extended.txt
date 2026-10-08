@@ -1,0 +1,91 @@
+2|jq|cat .env | head
+2|jq|awk 1 .env
+2|jq|sed -n p .env
+2|jq|python3 -c "print(open('.env').read())"
+2|jq|node -e "console.log(process.env)"
+2|jq|bat .env
+2|jq|more .env
+2|jq|tail .env
+2|jq|xxd .env
+2|jq|base64 .env
+0|jq|cat .env > /tmp/x && cat /tmp/x
+2|jq|source .env && echo $API_KEY
+2|jq|docker compose config
+2|jq|git show HEAD:.env
+2|jq|set
+2|jq|declare -p
+2|jq|export
+2|jq|typeset -p
+2|jq|cat .env | grep KEY
+2|jq|cat -A .env
+2|jq|cat ./.env
+2|jq|cat "$PWD/.env"
+2|jq|echo "$(< .env)"
+2|jq|while read -r line; do echo "$line"; done < .env
+2|jq|python3 -c "import os; print(os.environ)"
+2|jq|python3 -c "import os; print(os.environ['OPENAI_API_KEY'])"
+2|jq|node -e "console.log(process.env.STRIPE_SECRET_KEY)"
+2|jq|node -p "process.env"
+2|jq|ruby -e 'puts File.read(".env")'
+2|jq|echo $DATABASE_URL
+2|jq|printf '%s\n' "$OPENAI_API_KEY"
+2|jq|printenv | sort
+2|jq|docker exec web env
+2|jq|docker exec web printenv
+2|jq|docker exec web cat /proc/1/environ
+2|jq|docker inspect web
+2|jq|kubectl get secret app -o yaml
+2|jq|heroku config
+2|jq|gcloud secrets versions access latest --secret=api-key
+2|jq|aws secretsmanager get-secret-value --secret-id prod/db
+2|jq|gh auth token
+2|jq|cat .dev.vars
+2|jq|git diff .env
+2|jq|cat config/secrets.yml
+2|jq|cat /run/secrets/db_password
+0|jq|grep -rn "password" src
+0|jq|grep -rn token src
+0|jq|grep -rni "secret" src/lib
+0|jq|cat src/auth/token.ts
+0|jq|cat src/lib/secrets.ts
+0|jq|npm test -- --grep token
+0|jq|npm test
+0|jq|npm run lint
+0|jq|git log --oneline -5
+0|jq|git diff
+0|jq|git show HEAD --stat
+0|jq|git add src/login.ts && git commit -m "fix login"
+0|jq|ls -la
+0|jq|grep -rn "TODO" src
+0|jq|cat package.json
+0|jq|cat src/index.ts
+0|jq|cat README.md
+0|jq|python3 -c "import os; print(os.environ.get('HOME'))"
+0|jq|node -e "console.log(process.env.NODE_ENV)"
+0|jq|curl -H "Authorization: Bearer $(gcloud auth print-access-token)" https://example.com
+0|jq|docker compose config --services
+0|jq|docker inspect --format '{{.State.Status}}' web
+0|jq|docker compose up -d
+0|jq|echo ".env" >> .gitignore
+0|jq|env | wc -l
+0|jq|git check-ignore -q .env && echo ignored
+0|jq|ls -la .env
+0|jq|git ls-files -- '.env' '.env.*' '*.pem' '*.key' '*credential*' '*secret*'
+0|jq|git log --all --oneline --max-count=5 -- .env '*.pem'
+0|jq|grep -rhoE 'process\.env\.[A-Z0-9_]+' src | sort -u
+0|jq|cut -d= -f1 .env | sort
+0|jq|kubectl describe secret app
+0|jq|set -e
+0|jq|set -euo pipefail; npm test
+0|jq|export NODE_ENV=production
+0|jq|declare -a arr
+0|jq|cat src/routes/password-reset.ts
+0|jq|docker run --env-file .env myimage
+0|jq|sed -i '' 's/OLD/NEW/' .env
+0|jq|git worktree add ../myapp-fix -b fix origin/main
+2|nojq|cat .env | head
+2|nojq|git show HEAD:.env
+2|nojq|node -e "console.log(process.env)"
+2|nojq|docker compose config
+0|nojq|grep -rn token src
+0|nojq|git status

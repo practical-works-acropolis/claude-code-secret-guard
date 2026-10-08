@@ -1,0 +1,36 @@
+0|jq|export PATH="$PATH:./bin"; npm test
+0|jq|node -e "require('./scripts/check')"
+0|jq|python3 -c "print(1+1)"
+0|jq|node scripts/build.js
+0|jq|docker exec web ls /app
+0|jq|git diff src/env.ts
+0|jq|cat src/config/env.ts
+0|jq|gh auth status
+0|jq|gh pr create --title "fix: x" --body-file pr-body.md
+0|jq|sed -n '1,20p' src/index.ts
+0|jq|awk '{print $1}' data.csv
+0|jq|git log -p src/index.ts
+0|jq|docker logs web --tail 50
+0|jq|kubectl get pods -o yaml
+0|jq|printf '%s\n' hello
+0|jq|echo "Using token from env"
+0|jq|cat docs/tokens.md
+0|jq|npm run dev
+0|jq|pnpm install --frozen-lockfile
+0|jq|curl -i http://localhost:3000/health
+0|jq|grep -rn "API_KEY" src
+0|jq|grep -c STRIPE .env
+0|jq|wc -l < .env
+0|jq|git status --porcelain | awk '$1=="D"{print $2}' | xargs git restore --
+0|jq|for i in $(seq 1 30); do curl -s -o /dev/null -w '%{http_code}\n' -X POST https://example.com/api/login; done | sort | uniq -c
+0|jq|grep -rnE 'readFileSync|readFile\(|open\(' src | grep -v test
+0|jq|[ -n "$OPENAI_API_KEY" ] && echo set
+0|jq|echo "length ${#STRIPE_SECRET_KEY}"
+2|jq|env | sort
+2|jq|cat .envrc
+2|jq|git log -p -- .env
+2|jq|docker compose -f prod.yml config
+2|jq|kubectl get secret app -o jsonpath='{.data.token}' | base64 -d
+2|jq|declare
+2|jq|perl -ne 'print' .env
+2|jq|cat ~/.ssh/id_ed25519

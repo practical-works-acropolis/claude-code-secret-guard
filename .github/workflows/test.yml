@@ -1,0 +1,45 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Versions
+        run: |
+          bash --version | head -1
+          command -v jq || echo "no jq"
+          command -v python3 || echo "no python3"
+
+      - name: Syntax check
+        run: bash -n hooks/block-secret-print.sh tests/run.sh
+
+      - name: Test suite (normal PATH)
+        run: ./tests/run.sh
+
+      - name: Test suite (no jq, no python3 on PATH)
+        run: FORCE_NOJQ=1 ./tests/run.sh
+
+      - name: Test with macOS system bash 3.2
+        if: runner.os == 'macOS'
+        run: /bin/bash ./tests/run.sh
+
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: shellcheck
+        run: shellcheck -S warning hooks/block-secret-print.sh tests/run.sh

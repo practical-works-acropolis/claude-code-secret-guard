@@ -1,0 +1,32 @@
+2|jq|cat .env
+2|jq|printenv
+2|jq|env
+2|jq|printenv OPENAI_API_KEY
+2|jq|echo $STRIPE_SECRET_KEY
+2|jq|echo "key is ${OPENAI_API_KEY}"
+2|jq|head -5 .env.local
+2|jq|cat ~/.aws/credentials
+2|jq|less config/server.pem
+2|jq|grep DATABASE_URL .env
+2|jq|env | grep KEY
+2|jq|export -p
+2|jq|cd app && cat .env.production
+0|jq|ls
+0|jq|wc -c .env
+0|jq|grep -c API_KEY .env
+0|jq|grep -q API_KEY .env && echo present
+0|jq|cut -d= -f1 .env
+0|jq|cat .env.example
+0|jq|cp .env .env.backup
+0|jq|cat .env > /tmp/env-copy.txt
+0|jq|grep -rn "process.env" src
+0|jq|cat src/pages/password-reset.tsx
+0|jq|echo $HOME
+0|jq|echo "length ${#OPENAI_API_KEY}"
+0|jq|env NODE_ENV=test npm test
+0|jq|npm run build 2>&1 | tail -20
+0|jq|git status
+2|nojq|cat .env
+2|nojq|printenv
+0|nojq|ls
+0|nojq|wc -c .env

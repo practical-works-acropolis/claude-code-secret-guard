@@ -17,7 +17,7 @@ From the root of your project:
 ```
 mkdir -p .claude/hooks
 curl -fsSL -o .claude/hooks/block-secret-print.sh \
-  https://raw.githubusercontent.com/PracticalWorks/claude-code-secret-guard/main/hooks/block-secret-print.sh
+  https://raw.githubusercontent.com/practical-works-acropolis/claude-code-secret-guard/main/hooks/block-secret-print.sh
 chmod +x .claude/hooks/block-secret-print.sh
 ```
 
